@@ -1,0 +1,73 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Origines des militants "Freinage d'urgence"</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <style>
+            body { margin: 0; padding: 0; }
+            #map { height: 100vh; width: 100vw; }
+            .title {
+                position: absolute;
+                top: 10px;
+                left: 50px;
+                z-index: 1000;
+                background: white;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                font-family: Arial;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            @media (max-width: 600px) {
+                .title {
+                    top: auto;
+                    bottom: 10px;
+                    left: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title">Origines des militants "Freinage d'urgence"</div>
+        <div id="map"></div>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+    
+            const points = [{"lat": 44.8576, "lon": -0.5734, "mentions": 132}, {"lat": 43.6134, "lon": 3.8693, "mentions": 8}, {"lat": 45.3652, "lon": 1.8705, "mentions": 3}, {"lat": 50.6319, "lon": 3.047, "mentions": 1}, {"lat": 45.8544, "lon": 1.2488, "mentions": 1}, {"lat": 43.3493, "lon": -1.6976, "mentions": 5}, {"lat": 43.8995, "lon": -0.4905, "mentions": 9}, {"lat": 43.4622, "lon": -1.4416, "mentions": 4}, {"lat": 43.596, "lon": 1.4321, "mentions": 50}, {"lat": 48.8873, "lon": 2.3068, "mentions": 34}, {"lat": 48.1117, "lon": -1.6819, "mentions": 5}, {"lat": 43.7306, "lon": 3.3058, "mentions": 2}, {"lat": 49.9004, "lon": 2.2897, "mentions": 1}, {"lat": 45.7483, "lon": 4.8257, "mentions": 16}, {"lat": 45.6474, "lon": 0.1451, "mentions": 6}, {"lat": 43.4923, "lon": -1.466, "mentions": 5}, {"lat": 46.9998, "lon": 1.6978, "mentions": 6}, {"lat": 47.232, "lon": -1.5482, "mentions": 6}, {"lat": 45.9429, "lon": -0.9722, "mentions": 1}, {"lat": 46.1624, "lon": -1.1735, "mentions": 4}, {"lat": 46.3285, "lon": -0.4653, "mentions": 1}, {"lat": 44.5861, "lon": -0.0422, "mentions": 7}, {"lat": 44.5373, "lon": -0.2413, "mentions": 40}, {"lat": 43.32, "lon": -0.3501, "mentions": 4}, {"lat": 44.8019, "lon": -0.5483, "mentions": 1}, {"lat": 45.8619, "lon": 3.5396, "mentions": 1}, {"lat": 43.6342, "lon": 3.4129, "mentions": 2}, {"lat": 49.3783, "lon": 2.4091, "mentions": 2}, {"lat": 47.7507, "lon": -3.3789, "mentions": 1}, {"lat": 45.4302, "lon": 4.3787, "mentions": 1}, {"lat": 46.5836, "lon": 0.3596, "mentions": 5}, {"lat": 45.8823, "lon": 0.3179, "mentions": 1}, {"lat": 43.6363, "lon": 1.7108, "mentions": 2}, {"lat": 43.7392, "lon": 1.3568, "mentions": 5}, {"lat": 43.584, "lon": 2.1711, "mentions": 2}, {"lat": 43.3595, "lon": 5.3634, "mentions": 11}, {"lat": 49.2517, "lon": 4.0402, "mentions": 1}, {"lat": 46.4564, "lon": -0.7931, "mentions": 1}, {"lat": 45.7859, "lon": 3.1154, "mentions": 6}, {"lat": 44.132, "lon": 0.3434, "mentions": 1}, {"lat": 43.2347, "lon": 0.0662, "mentions": 5}, {"lat": 42.6964, "lon": 2.899, "mentions": 1}, {"lat": 43.4654, "lon": 1.9967, "mentions": 1}, {"lat": 45.4291, "lon": 0.9127, "mentions": 1}, {"lat": 45.1919, "lon": 0.7119, "mentions": 4}, {"lat": 43.3645, "lon": -1.7664, "mentions": 1}, {"lat": 43.9258, "lon": 2.1475, "mentions": 1}, {"lat": 43.9906, "lon": 3.4807, "mentions": 1}, {"lat": 43.7303, "lon": 4.0217, "mentions": 1}, {"lat": 44.7917, "lon": -0.6765, "mentions": 3}, {"lat": 44.9129, "lon": -0.2348, "mentions": 5}, {"lat": 44.8606, "lon": -0.2488, "mentions": 2}, {"lat": 45.9016, "lon": 6.1181, "mentions": 1}, {"lat": 43.7009, "lon": -1.0597, "mentions": 3}, {"lat": 44.8543, "lon": 0.4865, "mentions": 1}, {"lat": 43.5587, "lon": -1.1071, "mentions": 1}, {"lat": 44.8282, "lon": -0.1799, "mentions": 5}, {"lat": 43.1365, "lon": 5.9326, "mentions": 4}, {"lat": 44.3404, "lon": -0.1514, "mentions": 6}, {"lat": 45.1822, "lon": 5.7212, "mentions": 2}, {"lat": 46.6677, "lon": -1.4079, "mentions": 2}, {"lat": 47.4767, "lon": -0.5562, "mentions": 2}, {"lat": 44.7144, "lon": -0.944, "mentions": 1}, {"lat": 43.165, "lon": 3.0202, "mentions": 1}, {"lat": 43.3475, "lon": 3.2309, "mentions": 2}, {"lat": 44.5054, "lon": 0.1722, "mentions": 5}, {"lat": 43.758, "lon": 2.0013, "mentions": 1}, {"lat": 44.8626, "lon": -0.0279, "mentions": 3}, {"lat": 44.4423, "lon": -0.2128, "mentions": 7}, {"lat": 44.7011, "lon": -0.077, "mentions": 2}, {"lat": 43.874, "lon": -1.1449, "mentions": 3}, {"lat": 44.2537, "lon": -0.2843, "mentions": 3}, {"lat": 44.3587, "lon": 2.5669, "mentions": 1}, {"lat": 44.2539, "lon": 0.6371, "mentions": 1}, {"lat": 44.8764, "lon": -0.5195, "mentions": 1}, {"lat": 43.8511, "lon": -0.9865, "mentions": 1}, {"lat": 46.0721, "lon": 0.4378, "mentions": 1}, {"lat": 43.8483, "lon": 1.715, "mentions": 1}, {"lat": 44.0223, "lon": 1.3641, "mentions": 1}, {"lat": 43.4942, "lon": -0.7802, "mentions": 1}, {"lat": 45.0293, "lon": 0.3646, "mentions": 1}, {"lat": 42.95, "lon": 0.9837, "mentions": 1}, {"lat": 44.7708, "lon": -0.6167, "mentions": 1}, {"lat": 44.686, "lon": -0.4554, "mentions": 1}, {"lat": 43.0054, "lon": -0.0957, "mentions": 1}, {"lat": 44.5703, "lon": -0.3091, "mentions": 2}, {"lat": 44.378, "lon": -0.1887, "mentions": 1}, {"lat": 44.7239, "lon": -0.7271, "mentions": 1}, {"lat": 44.2896, "lon": -0.0867, "mentions": 3}, {"lat": 44.3172, "lon": -0.1209, "mentions": 2}, {"lat": 44.4508, "lon": 1.4405, "mentions": 1}, {"lat": 44.313, "lon": -0.2082, "mentions": 3}, {"lat": 43.6533, "lon": 0.5749, "mentions": 1}, {"lat": 44.3117, "lon": 0.0844, "mentions": 1}, {"lat": 47.3229, "lon": 5.0375, "mentions": 1}, {"lat": 44.4332, "lon": -0.3244, "mentions": 1}, {"lat": 44.3913, "lon": -0.1158, "mentions": 1}, {"lat": 44.7466, "lon": -0.5295, "mentions": 1}, {"lat": 44.0974, "lon": 3.1174, "mentions": 1}, {"lat": 43.0547, "lon": -0.3728, "mentions": 1}, {"lat": 44.6534, "lon": -1.175, "mentions": 1}, {"lat": 44.9245, "lon": 2.4416, "mentions": 1}, {"lat": 45.2731, "lon": 1.7631, "mentions": 1}, {"lat": 44.4106, "lon": -0.0259, "mentions": 1}, {"lat": 46.6325, "lon": 1.2606, "mentions": 3}];
+    
+            const map = L.map('map', {
+                maxBounds: [[41.3, -4.8], [51.1, 8.2]],
+                minZoom: 6
+            }).setView([46.603354, 1.888334], 6);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                subdomains: 'abc',
+                minZoom: 6,
+                maxZoom: 18
+            }).addTo(map);
+            
+            points.forEach(point => {
+                L.circleMarker([point.lat, point.lon], {
+                    radius: 5 + point.mentions * 0.1,
+                    color: '#1f77b4',
+                    fillColor: '#1f77b4',
+                    fillOpacity: 0.6,
+                    weight: 1
+                })
+                .bindPopup(point.mentions.toString())
+                .addTo(map);
+            });
+            
+            window.addEventListener('resize', () => {
+                map.invalidateSize();
+            });
+        </script>
+    </body>
+    </html>
+    
